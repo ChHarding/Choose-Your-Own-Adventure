@@ -1,4 +1,5 @@
 # add imports necessary for the app
+# structure for pygame?
 
 # list out functions
 class adventure_game():
