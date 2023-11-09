@@ -4,20 +4,20 @@ stories = [
         "path": 1,
         "image": "Images\storyone_flat_tire.jpg",
         "text": "You are on the way to work when you all of a sudden you get a flat tire",
-        "question": "Do you want to call a friend to come help? (yes/no): ",
-        "choices": {"yes": 2, "no": 3}
+        "question": "What should you do?",
+        "choices": {"Call friend": 2, "Pull to the side": 3, "Go home": 2, "Call your boss": 3}
     },
     {
         "path": 2,
-        "text": "You are waiting for your friend when all of a sudden you get a phone call from your boss",
-        "question": "You hesitate and then look at your phone again. Do you want to pick up the call? (yes/no): ",
-        "choices": {"yes": 4, "no": 5}
+        "text": "You are waiting for your friend when all of a sudden you get a phone call from your boss. You hesitate and then look at your phone again. ",
+        "question": "Do you want to pick up the call? (yes/no): ",
+        "choices": {"Pick Up": 4, "Decline": 5, "Text": 4, "Set your phone aside": 5}
     },
     {
         "path": 3,
         "text": "You decide not to call your friend and now you don't know what to do. All of a sudden you get a call from your boss.",
         "question": "Do you want to pick up? (yes/no): ",
-        "choices": {"yes": 4, "no": 5}
+        "choices": {"Pick up": 4, "Decline": 5, "Text": 4, "Set your phone aside": 5}
     },
     {
         "path": 4,
@@ -64,21 +64,21 @@ stories = [
         "path": 1,
         "image": "Images\storytwo_raining.jpg",
         "text": "It's late at night and you're on your way to get some food. You're walking alongside the curb when all of a sudden it starts raining and lightning heavily",
-        "question": "Should you find some cover and wait it out? (yes/no): ",
-        "choices": {"yes": 2, "no": 3}
+        "question": "What should you do? (yes/no): ",
+        "choices": {"Find cover": 2, "Keep walking": 3, "Go home": 2, "Call a friend": 3}
     },
     {
         "path": 2,
         "image": "Images\storytwo_building.jpg",
-        "text": "You look ahead and see a building with an awning that you can use to wait out the rain",
-        "question": "As you're waiting, you hear a noise from inside the building. Should you investigate? (yes/no): ",
-        "choices": {"yes": 4, "no": 5}
+        "text": "You look ahead and see a building with an awning that you can use to wait out the rain. As you're waiting, you hear a noise from inside the building. ",
+        "question": "Should you investigate? (yes/no): ",
+        "choices": {"Investigate": 4, "Stay there": 5, "Follow someone in": 4, "Keep walking": 5}
     },
     {
         "path": 3,
         "text": "You decide to keep walking and all of a sudden a car stops next to you asking you some questions.",
         "question": "Should you stop and see what they want? (yes/no): ",
-        "choices": {"yes": 4, "no": 5}
+        "choices": {"Talk to them": 4, "Ignore them": 5, "Follow the car": 4, "Keep walking": 5}
     },
     {
         "path": 4,
@@ -125,28 +125,28 @@ stories = [
         "path": 1,
         "image": "Images\storythree_driving.jpg",
         "text": "You are looking for a new job and have a very important job interview at 9am that you have to get to. It's currently 7am and you get in the car to start driving there.",
-        "question": "Should you stop to get some food first? (yes/no): ",
-        "choices": {"yes": 2, "no": 3}
+        "question": "What should you do first?",
+        "choices": {"Get food": 2, "Continue driving": 3, "Call sister": 2, "Go straight to job interview": 3}
     },
     {
         "path": 2,
         "image": "Images\storythree_drivethru.jpg",
-        "text": "You stop to get food but as soon as you order you realize they are backed up",
-        "question": "You have been waiting already for 20 minutes. Should you cancel your order and leave? (yes/no): ",
-        "choices": {"yes": 4, "no": 5}
+        "text": "You stop to get food but as soon as you order you realize they are backed up. You have been waiting already for 20 minutes. ",
+        "question": "Should you cancel your order and leave?",
+        "choices": {"Cancel order": 4, "Wait in line": 5, "Get in the car": 4, "Stay there": 5}
     },
     {
         "path": 3,
         "image": "Images\storythree_driving.jpg",
         "text": "You decide to keep driving but then you remembered that you have a pick up order from your sister to get. ;",
         "question": "Should you forget about the order and keep driving? (yes/no): ",
-        "choices": {"yes": 4, "no": 5}
+        "choices": {"Keep driving": 4, "Pick up order": 5}
     },
     {
         "path": 4,
         "text": "You cancel the order and get back in your car. ",
         "question": "Should you just drive straight to your interview? (yes/no): ",
-        "choices": {"yes": 6, "no": 7}
+        "choices": {"Drive to interview": 6, "Find new restaurant": 7}
     },
     {
         "path": 5,
@@ -248,21 +248,18 @@ stories = [
   [
     {
         "path": 1,
-        "image": "Images\storythree_driving.jpg",
         "text": "You are at the mall when all of a sudden you see one of your old friends",
         "question": "Do you want to say hi? (yes/no): ",
-        "choices": {"yes": 2, "no": 3}
+        "choices": {"Say hi": 2, "Keep walking": 3}
     },
     {
         "path": 2,
-        "image": "Images\storythree_drivethru.jpg",
         "text": "You decide to dodge your friend but as you're trying to hide, you run into one of her family members who is also there. She calls over Megan, your friend, and the two of you start chatting. She is so thrilled to see you and invites you to her house to have dinner. ",
         "question": "Should you go? (yes/no): ",
-        "choices": {"yes": 4, "no": 5}
+        "choices": {"Go to dinner": 4, "Decline": 5}
     },
     {
         "path": 3,
-        "image": "Images\storythree_driving.jpg",
         "text": "You decide to keep driving but then you remembered that you have a pick up order from your sister to get. ;",
         "question": "Should you forget about the order and keep driving? (yes/no): ",
         "choices": {"yes": 4, "no": 5}
@@ -275,9 +272,8 @@ stories = [
     },
     {
         "path": 5,
-        "image": "Images\storythree_traffic.jpg",
         "text": "You decide to pick up the order and when you get there, there are 15 cars ahead of you.",
-        "question": "Game Over - You didn't make it to the itnerview. Hit New Story to play again",
+        "question": "Game Over - You didn't make it to the interview. Hit New Story to play again",
         "choices": {"yes": None, "no": None}
     },
     {
@@ -307,5 +303,130 @@ stories = [
         "question": "Game Over - You didn't get to experience the wonderful night your friend had planned for all the guests she had invited. Hit New Story to play again",
         "choices": {"yes": None, "no": None}
     }
-  ]
+  ],
+  [
+    {
+        "path": 1,
+        "text": "You decide to go on a hiking trip in a dense, unfamiliar forest. As you venture deeper into the woods, you realize you've lost your way.",
+        "question": "Should you use a compass and map to navigate, try following the stars, follow the river, or climb a tree for a better view? (compass/stars/river/climb): ",
+        "choices": {"compass": 2, "stars": 4, "river": 6, "climb": 8}
+    },
+    {
+        "path": 2,
+        "text": "You use your compass and map to find your way, but it's not helping much. You start to hear strange sounds in the forest.",
+        "question": "Do you want to follow the sounds, continue using the compass, light a torch, or build a shelter for the night? (follow/compass/light/shelter): ",
+        "choices": {"follow": 4, "compass": 5, "light": 7, "shelter": 8}
+    },
+    {
+        "path": 4,
+        "text": "You follow the sounds and discover a hidden campfire with a group of mysterious people. They invite you to sit and share stories around the campfire.",
+        "question": "Do you want to join them, continue using the compass, light a torch, or build a shelter for the night? (join/compass/light/shelter): ",
+        "choices": {"join": 6, "compass": 5, "light": 7, "shelter": 8}
+    },
+    {
+        "path": 5,
+        "text": "You decide not to follow the sounds and continue to navigate using your compass and map. You eventually find your way out of the forest.",
+        "question": "Congratulations, you made it out of the forest! Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 6,
+        "text": "You join the group, and they share stories of the forest's secrets. It turns out they are friendly locals who know the area well. They guide you out of the forest the next morning.",
+        "question": "Good job! You made new friends and found your way back home. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 7,
+        "text": "You decide not to join them and instead continue to follow the compass. It takes a while, but you eventually find your way out of the forest.",
+        "question": "Congratulations, you made it out of the forest! Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 8,
+        "text": "You decide to climb a tree to get a better view of your surroundings. From the top, you spot a distant clearing. Do you want to head towards the clearing, continue using the compass, light a torch, or build a shelter for the night? (clearing/compass/light/shelter): ",
+        "choices": {"clearing": 9, "compass": 5, "light": 7, "shelter": 10}
+    },
+    {
+        "path": 9,
+        "text": "You make your way to the clearing and find a trail that leads you out of the forest. You've successfully escaped the wilderness.",
+        "question": "Congratulations, you made it out of the forest! Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 10,
+        "text": "You decide to build a shelter for the night, and it provides some protection. In the morning, you continue your journey and eventually find your way out of the forest.",
+        "question": "Congratulations, you made it out of the forest! Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    }
+],
+[
+    {
+        "path": 1,
+        "text": "You go to check your mailbox, and you find a mysterious package with no return address or name on it.",
+        "question": "Should you open the package, leave it alone, contact the authorities, or take it to a friend's house? (open/leave/contact/friend): ",
+        "choices": {"open": 2, "leave": 3, "contact": 4, "friend": 5}
+    },
+    {
+        "path": 2,
+        "text": "You decide to open the package, and inside, you find a peculiar device with a button. There's a note that says, 'Press the button.'",
+        "question": "Do you want to press the button, take the device to an expert, ignore the button, or destroy the device? (press/expert/ignore/destroy): ",
+        "choices": {"press": 6, "expert": 7, "ignore": 8, "destroy": 9}
+    },
+    {
+        "path": 3,
+        "text": "You choose not to open the package and put it aside. You're curious about it but decide to ignore it for now.",
+        "question": "Game Over - You didn't explore the mysterious package. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 4,
+        "text": "You press the button, and the device starts beeping. Suddenly, there's a blinding flash of light and a loud explosion!",
+        "question": "Game Over - The mysterious package led to a dangerous outcome. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 5,
+        "text": "You decide not to press the button and instead read the note more carefully. It reveals a riddle that might lead to a hidden treasure.",
+        "question": "Do you want to solve the riddle and embark on a treasure hunt, report the package to the authorities, leave it at a public place, or hand it to a scientist? (solve/report/leave/scientist): ",
+        "choices": {"solve": 10, "report": 7, "leave": 8, "scientist": 11}
+    },
+    {
+        "path": 6,
+        "text": "You decide to solve the riddle, and it leads you on a thrilling adventure to find hidden treasure. You eventually uncover a chest full of valuable items.",
+        "question": "Good job! You've successfully completed the treasure hunt. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 7,
+        "text": "You choose to report the package to the authorities, and they take it away for investigation. The package remains a mystery.",
+        "question": "Game Over - You played it safe but missed an adventure. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 8,
+        "text": "You decide to leave the package at a public place, and it gets picked up by someone else. The contents of the package remain unknown to you.",
+        "question": "Game Over - You chose to let someone else deal with the package. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 9,
+        "text": "You decide to destroy the device, and it results in a loud explosion. The package was indeed dangerous.",
+        "question": "Game Over - You attempted to destroy the package, but it caused an explosion. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 10,
+        "text": "You successfully solve the riddle and embark on a thrilling adventure to find hidden treasure. You eventually uncover a chest full of valuable items.",
+        "question": "Good job! You've successfully completed the treasure hunt. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    },
+    {
+        "path": 11,
+        "text": "You decide to hand the device to a scientist for examination. They thank you and promise to investigate the mysterious package further.",
+        "question": "Good job! You contributed to solving the mystery. Hit New Story to play again.",
+        "choices": {"yes": None, "no": None}
+    }
+]
+
+
 ]
