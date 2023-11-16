@@ -58,6 +58,12 @@ class Story_app(tk.Tk):
             self.img_list.append(imgToInsert)
             self.text_widget.image_create("current", image=self.img_list[-1])
 
+          # ask the question for current segment/path
+        self.text_widget.insert("end", "\n" * 2 + self.segment['question'])
+        
+        # jump to the last line
+        self.text_widget.see("end")
+
         choices = list(self.segment["choices"].keys())
         for i, choice in enumerate(choices):
             self.buttons[i].config(text=choice)

@@ -1,14 +1,21 @@
 import random
 import tkinter as tk
 from PIL import Image, ImageTk
+import pygame
+import time
 import os
+
+from stories import stories
+
+pygame.mixer.init()
+
 
 print("CWD:", os.getcwd())
 os.chdir("Final_Project")
 
-from stories import stories
 
 class Story_app(tk.Tk):
+    past_stories = []  # must be accessed by class name: Story_app.past_stories not self.past_stories!
     def __init__(self):
         super().__init__()
         self.title("Random Story")
@@ -23,21 +30,40 @@ class Story_app(tk.Tk):
 
         self.buttons = []
         for i in range(4):  # Create buttons for choices
-            button = tk.Button(self, text="", command=lambda i=i: self.select_choice(i), bg = "light blue", fg = "dark blue", font=("Arial", 12))
+            button = tk.Button(self, text="", command=lambda i=i: self.select_choice(i), bg = "light blue", fg = "black", font=("Arial", 12))
             self.buttons.append(button)
             button.grid(row=1, column=i, padx=10, pady=10, sticky="w")
-       
+      
+        # get random story that hasn't been played yet
+        num_stories = len(stories)
+        while len(Story_app.past_stories) < num_stories:
+            current_story_index = random.randint(0, num_stories-1)
+            if current_story_index not in Story_app.past_stories:
+                break
+        else:
+            print("All stories have been played!")
+            self.after(2000, self.destroy)
 
-        self.random_story = random.choice(stories)
+
+        Story_app.past_stories.append(current_story_index) # remember this story has been played in the class list
+        print("past_stories:", Story_app.past_stories)
+        self.random_story = stories[current_story_index]
         self.current_location = 1
         self.img_list = []
         self.process_path()
 
+        self.new_story_button = tk.Button(self, text="Play New Story", command=self.new_story, bg="black",
+                                          fg="yellow", font=("Arial", 12))
+        self.new_story_button.grid(row=1, column=4, padx=10, pady=10, sticky="e")
+
+        self.new_story()
 
     def process_path(self):
         self.segment = self.random_story[self.current_location - 1]
 
-        self.text_widget.insert("end", self.segment["text"] + "\n")
+        self.text_widget.tag_configure("story", foreground="white")
+        self.text_widget.insert("end", self.segment["text"] + "\n", "story")
+
 
         if "image" in self.segment:
             image_path = self.segment["image"]
@@ -47,6 +73,17 @@ class Story_app(tk.Tk):
             self.img_list.append(imgToInsert)
             self.text_widget.image_create("current", image=self.img_list[-1])
 
+        if "sound" in self.segment:
+            sound_path = self.segment["sound"]
+            self.play_sound(sound_path)
+
+        # ask the question for current segment/path        
+        self.text_widget.tag_configure("question", foreground="yellow")
+        self.text_widget.insert("end", "\n" * 2 + self.segment['question'] + "\n" * 2, "question")
+
+        # jump to the last line
+        self.text_widget.see("end")
+
         choices = list(self.segment["choices"].keys())
         for i, choice in enumerate(choices):
             self.buttons[i].config(text=choice)
@@ -55,6 +92,23 @@ class Story_app(tk.Tk):
         for i in range(len(choices), 4):
             self.buttons[i].config(text="")
             self.buttons[i].config(state="disabled")
+
+
+    def play_sound(self, file_path):
+        try:
+            pygame.mixer.music.load(file_path)
+
+            # Play the loaded music file
+            pygame.mixer.music.play()
+
+            # while sound is playing, just stay in a sleep state
+            while pygame.mixer.music.get_busy():
+                time.sleep(0.5)
+
+        except Exception as e:
+            print("Error: ", e)
+
+
 
     def select_choice(self, choice_idx):
         choices = list(self.segment["choices"].keys())
@@ -83,46 +137,3 @@ if __name__ == "__main__":
     app = Story_app()
     app.mainloop()
 
-
-
-'''
-#loop the user to another random story and go through all the different paths for each of the stories
-while True:
-    random_story = random.choice(stories)
-    current_location = 1
-
-    while current_location in range(1, len(random_story) + 1):
-        self.segment = [s for s in random_story if s["path"] == current_location][0]
-
-        print(self.segment["text"])
-
-        #display the image if a certain path in the story has one. 
-        if "image" in self.segment:
-            image_path = self.segment["image"]
-            img = Image.open(image_path)
-            img.show()
-
-        choice = input(f"{self.segment['question']} ").strip().lower()
-
-        if choice == "yes" and "yes" in self.segment["choices"]:
-            current_location = self.segment["choices"]["yes"]
-        elif choice == "no" and "no" in self.segment["choices"]:
-            current_location = self.segment["choices"]["no"]
-        else:
-            print("Invalid choice. Please answer 'yes' or 'no'.")
-
-        if current_location is None:
-            play_again = input("Thanks for playing! Play again? (yes/no):").strip().lower()
-            if play_again == "yes":
-                break
-            elif play_again == "no":
-                sys.exit()
-
-
-
-
-
-# Print out functions
-# close out class
-# deploy app
-'''
