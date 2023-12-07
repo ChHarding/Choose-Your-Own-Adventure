@@ -9,12 +9,9 @@
 - Commit the Code from Github to VS Code
   
 **Installs in the Command Line** -- *This is what needs to be installed in the terminal first so the imports in the py file can run*
-- "pip install pygame"
-- "pip install Pillow"
-- "pip install tk"
-
-  **random, time and os is already included in python's standard library so pip isn't need to install them. They just need to be included at the top as imports
-  for the code to run*
+- pip3 install pygame
+- pip3 install Pillow
+- pip3 install tk
 
 **Folder Set-Up**
 - Images and Sounds folders need to be in the same root folder as the py file. If it's all in the same root folder, the sounds and images should run with the code correctly.
