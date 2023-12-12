@@ -1,5 +1,4 @@
-# ignore folder with venvs
-574
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

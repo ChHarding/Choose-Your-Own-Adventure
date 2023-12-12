@@ -10,10 +10,6 @@ from stories import stories
 pygame.mixer.init()
 
 
-print("CWD:", os.getcwd())
-os.chdir("Final_Project")
-
-
 class Story_app(tk.Tk):
     past_stories = []  # must be accessed by class name: Story_app.past_stories not self.past_stories!
     def __init__(self):
